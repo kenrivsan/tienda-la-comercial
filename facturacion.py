@@ -6,7 +6,7 @@ from inventario import buscar_producto, hay_stock
 from descuentos import descuento_cliente_frecuente
 
 NOMBRE_TIENDA = "Tienda El Buen Precio"
-IVA = 0.10
+IVA = 0.12
 
 def calcular_subtotal(items):
     # items es una lista de tuplas (codigo, cantidad)
@@ -22,7 +22,7 @@ def calcular_total(subtotal, descuento):
     impuesto = base * IVA
     return base + impuesto, impuesto
 
-def imprimir_factura(cliente, items, frecuente):
+def imprimir_factura(cliente, items, frecuente):    
     subtotal = calcular_subtotal(items)
     descuento = 0
     if frecuente:
